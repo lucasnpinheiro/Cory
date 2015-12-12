@@ -1,0 +1,22 @@
+<ion-view cache-view="false" view-title="Meus Pedidos">
+    <ion-header-bar class="bar-subheader bar-dark">
+        <div class="row">
+            <div class="col text-center">Pedido</div>
+            <div class="col text-center">Data</div>
+            <div class="col text-center">Valor</div>
+            <div class="col text-center">Ação</div>
+        </div>
+    </ion-header-bar>
+    <ion-content class="fundo">
+        <div class="card">
+            <div class="item item-text-wrap">
+                <div ng-repeat="list in lista" class="row">
+                    <div class="col text-center center-verdical {{linhaColor($index)}}">{{list.id}}</div>
+                    <div class="col text-center center-verdical {{linhaColor($index)}}">{{list.data| data}}</div>
+                    <div class="col text-right center-verdical {{linhaColor($index)}}">{{list.total| moeda : 'R$ '}}</div>
+                    <div class="col text-right center-verdical {{linhaColor($index)}}"><a class="button" href="#/app/detalhes/{{list.id}}"><i class="fa fa-external-link"></i> Detalhes</a></div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

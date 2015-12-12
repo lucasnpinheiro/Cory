@@ -1,0 +1,24 @@
+{
+  "name": "cory",
+  "app_id": "7fa8aab5",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "xwalk_hosts": [
+    "http://*/",
+    "http://*/*",
+    "https://*/*",
+    "https://*/"
+  ],
+    "browsers": [
+    {
+      "platform": "android",
+      "browser": "crosswalk"
+    }
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}

@@ -1,0 +1,39 @@
+<ion-view view-title="Detalhes do Pedido">
+    <ion-content class="fundo">
+
+        <div class="card">
+          <div class="item item-divider">
+            Detalhes do Pedido
+          </div>
+          <div class="item item-text-wrap">
+                <div class="row">
+                    <div class="col text-center">Pedido: {{lista.id}}</div>
+                    <div class="col text-center">Data: {{lista.data| data}}</div>
+                    <div class="col text-center">Total: {{lista.total| moeda : 'R$ '}}</div>
+                </div>
+          </div>
+          
+        </div>
+        <div class="card">
+            <div class="item item-divider">
+                Produtos
+            </div>
+            <div class="item item-divider item-divider-green">
+                <div class="row">
+                    <div class="col col-50 text-center">Produto</div>
+                    <div class="col text-center">Quantidade</div>
+                    <div class="col text-center">Valor</div>
+                    <div class="col text-center">Total</div>
+                </div>
+            </div>
+            <div class="item item-text-wrap">
+                <div ng-repeat="list in lista.produtos" class="row">
+                    <div class="col col-50 text-left center-verdical {{linhaColor($index)}}">{{list.nome}}</div>
+                    <div class="col text-center center-verdical {{linhaColor($index)}}">{{list._joinData.quantidade}}</div>
+                    <div class="col text-right center-verdical {{linhaColor($index)}}">{{list._joinData.valor| moeda : 'R$ '}}</div>
+                    <div class="col text-right center-verdical {{linhaColor($index)}}">{{(list._joinData.valor * list._joinData.quantidade) | moeda : 'R$ '}}</div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,28 @@
+<ion-view view-title="Login">
+    <ion-content class="fundo">
+         <div class="card" style="margin: 100px;">
+            <div class="item item-divider">
+                <div class="row">
+                    <div class="text-center" style="width: 100%;">Entre com as credeniais de acesso.</div>
+                </div>     
+            </div>
+            <div class="item item-text-wrap">
+                <form ng-submit="doLogin()">
+                    <div class="list box">
+                        <label class="item item-input">
+                            <span class="input-label">Usuário</span>
+                            <input type="text" ng-model="loginData.nome">
+                        </label>
+                        <label class="item item-input">
+                            <span class="input-label">Senha</span>
+                            <input type="password" ng-model="loginData.senha">
+                        </label>
+                        <label class="item">
+                            <button class="button button-block button-positive" type="submit"><i class="fa fa-sign-in"></i> Entrar</button>
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

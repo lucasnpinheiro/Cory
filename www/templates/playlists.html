@@ -1,0 +1,41 @@
+<ion-view view-title="Pedidos">
+    <ion-header-bar class="bar-subheader bar-dark">
+        <div class="row">
+            <div class="col text-center">Cód.</div>
+            <div class="col col-50 text-left">Tipo/Sabor</div>
+            <div class="col text-center">Peso</div>
+            <div class="col col-10 text-right">R$ Unit.</div>
+            <div class="col col-10 text-center">Qtd.</div>
+            <div class="col col-20 text-right">R$ Total</div>
+        </div>
+    </ion-header-bar>
+    <ion-content class="fundo">
+        <div class="card">
+            <div class="item item-text-wrap">
+                <div ng-repeat="(key, value) in playlists">
+                    <div class="item item-divider text-center">
+                        {{key}}
+                    </div>
+                    <div ng-repeat="(k, playlist) in value.produtos" class="row">
+                        <div class="col text-center center-verdical {{linhaColor($index)}}">{{playlist.codigo}}</div>
+                        <div class="col col-50 text-left center-verdical {{linhaColor($index)}}"><a class="my-link" href="#/app/produto/{{playlist.id}}">{{playlist.nome}}</a></div>
+                        <div class="col text-center center-verdical {{linhaColor($index)}}">{{playlist.unidade}}</div>
+                        <div class="col col-10  text-center center-verdical {{linhaColor($index)}}">{{playlist.valor| moeda : 'R$ '}}</div>
+                        <div class="col col-10 text-right {{linhaColor($index)}}">
+                            <input class="col" style="border: 1px solid #ccc; text-align: center;" placeholder="Qtd" ng-model="quantidade" ng-change="change(this, $index, playlist.valor, key)" value="" type="number">
+                        </div>
+                        <div class="col col-20 text-right center-verdical {{linhaColor($index)}}">{{playlist.sub_total| moeda : 'R$ '}}</div>
+                    </div>
+                </div>
+                <div class="item"></div>
+            </div>
+        </div>
+    </ion-content>
+    <div class="bar bar-footer bar-positive rodape">
+        <div class="col col-20 text-center">Quantidade</div>
+        <div class="col col-20 text-center">{{quantidade_total}}</div>
+        <div class="col col-20 text-center">Total</div>
+        <div class="col col-20 text-center">{{total| moeda : 'R$ '}}</div>
+        <div class="col col-20 text-center"><button ng-click="finalizar()" class="button button-block button-assertive" style="height: 50px; margin-top: -5px;">Finalizar</button></div>
+    </div>
+</ion-view>

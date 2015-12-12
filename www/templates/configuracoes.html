@@ -1,0 +1,78 @@
+<ion-view view-title="Configurações">
+    <ion-header-bar>
+        <h1 class="title">Configurações basicas do APP</h1>
+    </ion-header-bar>
+    <ion-content class="fundo">
+    <div class="card">
+            
+            <div class="item item-divider">
+                <div class="row">
+                    <div class="text-center" style="width: 100%;">Configurações</div>
+                </div>     
+            </div>
+
+
+                
+
+
+            <div class="item item-text-wrap">
+                <form ng-submit="save()">
+                    <label class="item item-input">
+                        <span class="input-label">URL do Webservice</span>
+                        <input type="text" ng-model="config.url">
+                    </label>
+                    <label class="item">
+                        <button class="button button-block button-positive" type="submit"><i class="fa fa-floppy-o"></i> Salvar</button>
+                    </label>
+                </form>
+            </div>
+
+            <div class="item item-divider">
+                <div class="row">
+                    <div class="text-center" style="width: 100%;">Informações do Aplicativo</div>
+                </div>     
+            </div>
+
+            <div class="item item-text-wrap">
+                <label class="item item-input">
+                    <span class="input-label">Versão do APP</span>
+                    {{config.versao}}
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Cordova</span>
+                    {{config.cordova}}
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Model</span>
+                    {{config.model}}
+                </label>
+            </div>
+
+
+            <div class="item item-divider">
+                <div class="row">
+                    <div class="text-center" style="width: 100%;">Informações do Aparelho</div>
+                </div>     
+            </div>
+
+            <div class="item item-text-wrap">
+                <label class="item item-input">
+                    <span class="input-label">Conectado via</span>
+                    {{config.connection}}
+                    </label>
+                <label class="item item-input">
+                    <span class="input-label">Plataforma</span>
+                    {{config.platform}}
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">UUID</span>
+                    {{config.uuid}}
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Versão</span>
+                    {{config.version}}
+                </label>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
