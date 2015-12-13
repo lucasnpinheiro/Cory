@@ -25,5 +25,6 @@
   </platform>
   <icon src="resources/android/icon/drawable-mdpi-icon.png"/>
   <plugin name="cordova-plugin-whitelist" spec="~1.0.0"/>
+  <engine name="android" spec="~3.7.2"/>
 
 </widget>
